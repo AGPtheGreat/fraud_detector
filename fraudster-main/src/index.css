@@ -1,0 +1,294 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+
+
+
+.page {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  background-color: grey;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.popup-container {
+  position: fixed;
+  top: 100px;
+  left: 10vw;
+  right: 10vw;
+  height: calc(100% - 100px);
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+  z-index: 200;
+  .green-row {
+    background-color: #e6ffe6;
+  }
+  .red-row {
+    background-color: #ffe6e6;
+  }
+  .orange-row {
+    background-color: #fff0e6;
+  }
+  .popup {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    border: 2px grey solid;
+    padding: 10px;
+    .popup-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        border: none;
+        background: none;
+        font-size: 1.5EM;
+      }
+    }
+  }
+}
+
+.popup-visible {
+  filter: blur(5px);
+}
+
+.transaction-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  color: black;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  button {
+    text-decoration: underline;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    color: blue;
+  }
+
+  .red-row {
+    background-color: #ffe6e6;
+  }
+
+  .orange-row {
+    background-color: #fff0e6;
+  }
+
+  .green-row {
+    background-color: #e6ffe6;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbar-left {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 20px;
+    color: #FF746C;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    color: whitesmoke;
+  }
+
+  .logout-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .logout-button:hover {
+    background-color: #c9302c;
+  }
+}
+
+.navcus {
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  top: 60px;
+  z-index: 100;
+  background-color: white;
+  .selected {
+    color: grey;
+  }
+  .notSelected {
+    color: #FF746C;
+  }
+  .navbar-option{
+    background-color: #333;
+    width: calc(80vw / 3);
+    text-align: center;
+    border: 1px solid grey;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: dimgray;
+  margin: 0;
+  background-image: url('public/jerome_powell_background.png');
+  background-size: cover; /* makes the image cover the whole screen */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat; /* prevents the image from repeating */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-form {
+  background-color: ghostwhite;
+  color: black;
+  padding: 20px;
+  border: black solid 1px;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-fields input {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+
+.login-fields input:focus {
+  border-color: #0074D9;
+  box-shadow: 0 0 5px #0074D9;
+  outline: none;
+}
+
+.login-fields button {
+  padding: 12px;
+  background-color: #0074D9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-fields button:hover {
+  background-color: #005fa3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reguser-form {
+  background-color: whitesmoke;
+  color: black;
+  padding: 20px;
+  border: black solid 1px;
+}
+
+.load_more {
+  width: 100%;
+  padding: 10px;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 5%;
+  h3 {
+    text-align: center;
+  }
+  .section-settings {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px 20px 10px;
+    .settings-header {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .settings-set {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      .setting {
+        padding: 5px 0 0 10px;
+        .sub-setting {
+          font-style: italic;
+          font-size: .85em;
+          padding: 5px 0 0 10px;
+        }
+      }
+    }
+  }
+}
